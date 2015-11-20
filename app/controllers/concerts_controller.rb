@@ -12,8 +12,10 @@ class ConcertsController < ApplicationController
     @concert = Concert.new(concert_params)
 
     if @concert.save
+      flash[:notice] = 'Concert added successfully'
       redirect_to concerts_path
     else
+      flash[:alert] = "Sorry, something went wrong."
       render 'new'
     end
   end

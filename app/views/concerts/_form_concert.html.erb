@@ -1,3 +1,14 @@
+<%= flash_message %>
+
+<% if @concert.errors.any? %>
+  <ul>
+    <% @concert.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <%= form_for [@concert] do |f| %>
   <%= f.label :band %>
   <%= f.text_field :band %>
