@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+nav.main-nav li{
+  display: inline;
+}
+
+.logo-musiconcerts {
+  display: inline;
+  width: 20%;
+}
+
+aside {
+  width: 20%;
+  float: left;
+}
+
+.container {
+  width: 100%;
+  overflow: auto;
+}
+
+.content {
+  width: 80%;
+  float: right;
+}
+
+.concerts {
+  background-color: #ffa;
+}

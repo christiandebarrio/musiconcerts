@@ -8,9 +8,15 @@
 </head>
 <body>
 
-  <head>
-    <%= link_to("musiconcerts", root_path)%>
-  </head>
+  <header>
+    <div class="logo-musiconcerts">
+      <%= link_to("musiconcerts", root_path)%>
+    </div>
+    <nav class="main-nav">
+      <li><%= link_to("Home", root_path) %></li>
+      <li><%= link_to("Concerts", concerts_path) %></li>
+    </nav>
+  </header>
 
   <%= yield %>
 

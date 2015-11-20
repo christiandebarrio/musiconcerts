@@ -1,17 +1,18 @@
-<h2>Concerts today</h2>
+<h2>Wellcome to musiconcerts</h2>
 
-<ul>
-<% @concerts.each do |concert| %>
-    <li>
-      <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
-    </li>
-<% end %>
-</ul>
-
-<ul>
-<% @concerts_next.each do |concert| %>
-    <li>
-      <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
-    </li>
-<% end %>
-</ul>
+<div class="container">
+  <div class="content">
+    <h3>Concerts today</h3>
+    <%= render '/shared/concerts_list' %>
+  </div>
+  <aside>
+      <h3>Concerts next month</h3>
+      <ul>
+        <% @concerts_next.each do |concert| %>
+          <li>
+            <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
+          </li>
+        <% end %>
+      </ul>
+    </aside>
+</div>
