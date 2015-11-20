@@ -7,7 +7,7 @@ class Concert < ActiveRecord::Base
             :date, 
             :price, 
             :description, presence: true
-  validates :price, numericality: { only_integer: true, :greater_than => 0 }
+  validates :price, numericality: { only_integer: true, :greater_than_and_eq => 0 }
   validate :concert_date_cannot_be_in_the_past
 
   def concert_date_cannot_be_in_the_past
