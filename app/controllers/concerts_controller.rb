@@ -21,8 +21,11 @@ class ConcertsController < ApplicationController
   end
 
   def show
-      @concert = Concert.find_by(id: params[:id]) ||
-      render_404(params) # defined in application_controller
+      if @concert = Concert.find_by(id: params[:id])
+        @comment = @concert.comments.new
+      else
+        render_404(params) # defined in application_controller
+      end
   end
 
   private

@@ -5,3 +5,19 @@
 <p><%= @concert.description %></p>
 
 <p><%= @concert.price %></p>
+
+<section class="comment-section" >
+<h4>Comments</h4>
+
+<%= render '/comments/form_comment' %>
+
+<% if @concert.comments.any? %>
+ 
+  <% @concert.comments.persisted.reverse.each do |comment| %>
+    <div class="box">
+      <p><%= comment.content %></p>
+    </div> 
+  <% end %>
+
+<% end %>
+</section>

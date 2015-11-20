@@ -29,6 +29,13 @@ aside {
   min-width: 300px;
 }
 
+.box {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
 .container {
   width: 100%;
   overflow: auto;
