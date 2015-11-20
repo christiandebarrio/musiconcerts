@@ -1,9 +1,7 @@
 class ConcertsController < ApplicationController
 
   def index
-    concerts = Concert.all
-    concerts_availabe = concerts.select { |concert| concert.date > Date.today }
-    @concerts_sorted = concerts_availabe.sort_by { |concert| concert.date }.reverse
+    @concerts = Concert.available.order_asc
   end
 
   def new
