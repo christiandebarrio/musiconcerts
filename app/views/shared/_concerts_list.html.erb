@@ -1,8 +1,13 @@
 <div class="concerts">
 <ul>
 <% @concerts.each do |concert| %>
-    <li>
-      <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
+    <li>   
+      <%= concert.date.day %>/
+      <%= concert.date.month %>/
+      <%= concert.date.year %> · 
+      <%= link_to(concert.band, concert_path(concert.id))%> · 
+      <%= concert.city %> · 
+      <%= concert.price %>€.
     </li>
 <% end %>
 </ul>
