@@ -1,4 +1,5 @@
 class Concert < ActiveRecord::Base
+  has_many :comments
   
   validates :band, 
             :venue, 
