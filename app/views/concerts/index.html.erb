@@ -1,0 +1,11 @@
+<h2>Concerts</h2>
+
+<%= link_to("Add a new concert", new_concert_path) %>
+
+<ul>
+<% @concerts.each do |concert| %>
+    <li>
+      <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
+    </li>
+<% end %>
+</ul>
