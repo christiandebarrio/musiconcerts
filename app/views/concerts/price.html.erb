@@ -1,0 +1,19 @@
+<h2>filter by price</h2>
+
+<section id="user-budget">
+  <div class="form-price">
+    <p>how much is your budget?</p>
+
+    <%=form_tag("price", method: "post") do %>
+      <%= label_tag :price %>
+      <%= number_field_tag :price %>
+      <%= submit_tag("Filter") %>
+    <% end %>
+
+  </div>
+</section>
+
+<section id="concerts-list">
+  <%= render '/shared/concerts_list' %>
+</section>
+

@@ -28,6 +28,10 @@ class ConcertsController < ApplicationController
       end
   end
 
+  def price
+    @concerts = Concert.filter_by_price_under(params[:price].to_i).available.order_asc
+  end
+
   private
 
   def concert_params

@@ -7,7 +7,9 @@ class Concert < ActiveRecord::Base
             :date, 
             :price, 
             :description, presence: true
+  
   validates :price, numericality: { only_integer: true, :greater_than_and_eq => 0 }
+  
   validate :concert_date_cannot_be_in_the_past
 
   def concert_date_cannot_be_in_the_past
@@ -31,6 +33,14 @@ class Concert < ActiveRecord::Base
   def self.next_month
     date = Date.current + 1.month
     where(date: date.beginning_of_month..date.end_of_month)
+  end
+
+  def self.filter_by_price_under(price)
+    if price.nil?
+      all
+    else
+      where(price: 0..price.to_i)
+    end
   end
  
 
