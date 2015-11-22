@@ -6,13 +6,14 @@
     <%= render '/shared/concerts_list' %>
   </div>
   <aside>
-      <h3>Concerts next month</h3>
-      <ul>
-        <% @concerts_next.each do |concert| %>
-          <li>
-            <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · <%= concert.band %> · <%= concert.city %> · <%= concert.price %>€.
-          </li>
-        <% end %>
-      </ul>
-    </aside>
+    <h3>Concerts next month</h3>
+    <ul>
+      <% @concerts_next.each do |concert| %>
+        <li>
+          <%= concert.date.day %>/<%= concert.date.month %> · 
+          <%= concert.band %> · <%= concert.city %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
 </div>

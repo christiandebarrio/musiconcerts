@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get  'concerts/price' => 'concerts#price'
   post 'concerts/price' => 'concerts#price'
+  get  'concerts/top'   => 'concerts#top'
 
   resources :concerts, only:[:index, :new, :create, :show] do
     resources :comments, only: [:create]

@@ -1,12 +1,9 @@
 <h2>Concerts</h2>
-<div class="container">
-  <div class="content">
-    <h3>All concerts</h3>
-    <%= flash_message %>
 
-    <%= link_to("Add a new concert", new_concert_path) %>
+<h3>All concerts</h3>
+<%= flash_message %>
 
-    <%= render '/shared/concerts_list' %>
+<%= link_to("Add a new concert", new_concert_path) %>
 
-  </div>
-</div>
+<%= render '/shared/concerts_list' %>
+

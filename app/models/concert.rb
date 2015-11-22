@@ -27,7 +27,7 @@ class Concert < ActiveRecord::Base
   end
 
   def self.order_asc
-    order("date ASC")
+    available.order("date ASC")
   end
 
   def self.next_month
@@ -41,6 +41,10 @@ class Concert < ActiveRecord::Base
     else
       where(price: 0..price.to_i)
     end
+  end
+
+  def self.order_comments_desc(num_concerts)
+    available.order("comments_count DESC, date ASC").limit(num_concerts)
   end
  
 

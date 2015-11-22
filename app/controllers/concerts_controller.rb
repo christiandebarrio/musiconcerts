@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
 
   def index
-    @concerts = Concert.available.order_asc
+    @concerts = Concert.order_asc
   end
 
   def new
@@ -29,7 +29,11 @@ class ConcertsController < ApplicationController
   end
 
   def price
-    @concerts = Concert.filter_by_price_under(params[:price].to_i).available.order_asc
+    @concerts = Concert.filter_by_price_under(params[:price].to_i).order_asc
+  end
+
+  def top
+    @concerts = Concert.order_comments_desc(10)
   end
 
   private

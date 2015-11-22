@@ -1,13 +1,15 @@
 <h2><%= @concert.band %></h2>
 
-<h3><%= @concert.date %> · <%= @concert.venue %> · <%= @concert.city %></h3>
+<h3><%= @concert.date.day %>/<%= @concert.date.month %>/<%= @concert.date.year %> · 
+    <%= @concert.venue %> · 
+    <%= @concert.city %></h3>
 
-<p><%= @concert.description %></p>
+<p>Description: <%= @concert.description %></p>
 
-<p><%= @concert.price %></p>
+<p>Price: <%= @concert.price %>€</p>
 
 <section class="comment-section" >
-<h4>Comments</h4>
+<h4>Comments: <%= @concert.comments_count %></h4>
 
 <%= render '/comments/form_comment' %>
 

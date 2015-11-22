@@ -1,13 +1,12 @@
 <div class="concerts-list">
   <ul>
   <% @concerts.each do |concert| %>
-      <li>   
-        <%= concert.date.day %>/
-        <%= concert.date.month %>/
-        <%= concert.date.year %> · 
+      <li>
+        <%= concert.date.day %>/<%= concert.date.month %>/<%= concert.date.year %> · 
         <%= link_to(concert.band, concert_path(concert.id))%> · 
         <%= concert.city %> · 
-        <%= concert.price %>€.
+        Price: <%= concert.price %>€ · 
+        Comments: <%= concert.comments_count %>
       </li>
   <% end %>
   </ul>

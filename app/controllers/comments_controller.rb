@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
     concert = Concert.find_by(id: params[:concert_id])
     comment = concert.comments.new(comment_params)
     comment.save
+    concert.increment(:comments_count)
+    concert.save
     redirect_to action: 'show', controller: 'concerts', id: concert.id
   end
 
